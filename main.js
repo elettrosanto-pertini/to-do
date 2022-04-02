@@ -11,21 +11,26 @@ let taskInput = document.querySelector('#taskInput');
 let listaTaskEL = document.querySelector('#listaTask');
 let bottone = document.getElementById('submit-btn');
 
-
-function aggiungiTask() {
+function createRow(){
     //@param: null
     //@return: null
-    /*this function uses HTML entities in global scope to modify a pre-written mokup, 
-    fill it with user input, and then add it to the document.
-    It then cleans the input field and disables the Post button*/
-    
-    let task = taskInput.value;
     let newRow = HTMLtaskMokup.replace(/@/g, tasksID);
+    listaTaskEL.innerHTML = listaTaskEL.innerHTML + newRow;    
+}
 
-    listaTaskEL.innerHTML = listaTaskEL.innerHTML + newRow;
+function addTaskToRow(task){
+    //@param task: string
+    //@return: null
+    //add user input to HTML mokup as a string
+    let targetRow = document.querySelector(`#task-${tasksID}`);
+    targetRow.textContent = task;
+}
 
-    let newTask = document.querySelector(`#task-${tasksID}`);
-    newTask.textContent = task;
+function aggiungiTask() {
+    createRow();
+    let task = taskInput.value;
+
+    addTaskToRow(task);
 
     tasksID++
     taskInput.value = '';
