@@ -1,6 +1,3 @@
-//ELIMINARE TUTTO
-//A)prendere innerHTML dell'<ul>
-//B)resettare valore della lista
 
 const HTMLtaskMokup = `
     <tr id="row-@" class="row">
@@ -16,6 +13,12 @@ let bottone = document.getElementById('submit-btn');
 
 
 function aggiungiTask() {
+    //@param: null
+    //@return: null
+    /*this function uses HTML entities in global scope to modify a pre-written mokup, 
+    fill it with user input, and then add it to the document.
+    It then cleans the input field and disables the Post button*/
+    
     let task = taskInput.value;
     let newRow = HTMLtaskMokup.replace(/@/g, tasksID);
 
@@ -30,6 +33,10 @@ function aggiungiTask() {
 }
 
 function eliminaTask(questo) {
+    //@param: <HTML>
+    //@return: null
+    /*deletes a specified child element from the listaTaskEL parent*/
+    
     let ID = questo.id;
     let rowDaEliminare = document.querySelector(`#row-${ID}`);
 
@@ -37,11 +44,18 @@ function eliminaTask(questo) {
 }
 
 function eliminaTutti() {
+    //@param: null
+    //@return: null
+    //deletes evry child in listaTaskEL
     listaTaskEL.innerHTML = '';
     tasksID = 0;
 }
 
 function EnableDisable(InputHTML, btnToDisable) {
+    //@param InputHTML: <HTML>
+    //@param btnToDisable: <HTML>
+    //return: null
+    //Enables Post button when input field is not empty
 
     if (InputHTML.value.trim() != "") {
         btnToDisable.disabled = false;
