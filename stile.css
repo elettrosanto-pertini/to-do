@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis&family=Fredoka&family=Rubik&display=swap');
+*{
+    box-sizing: border-box;
+}
+html{
+    height:100%;
+    font-family: 'Fredoka','Dosis','Rubik' ,sans-serif;
+    font-size: large;
+    overflow: scroll;
+}
+body{
+    height:100%;
+}
+.container{
+    display:grid;
+    height:100%;
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: 10% auto 10%;
+
+    grid-template-areas:
+        ". . . . . ."
+        ". . t t . ."
+        ". . . . . ."
+    ;
+}
+
+.canvas{
+    grid-area:t;
+    display:flex;
+    flex-direction:column;
+    padding: 7px;
+    background-color:rgb(151, 241, 171);
+    border-radius: 15px;
+    box-shadow:-3px 3px 5px 3px #ccc;
+}
+
+#taskInputContainer{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.titolo{
+    text-align: center;
+    font-size:24px;
+    font-weight:700;
+}
+
+
+
+.row{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    border-bottom:1px dashed cadetblue;
+    padding:3px 0px;
+}
+
+.button{
+    border-radius:3px;
+    padding:4px;
+    margin-left:5px;
+    border:none;
+    border-radius: 5px;
+}
+.button:hover{
+    cursor:pointer;
+}
+    .delete{
+        background-color: rgba(223, 39, 39, 0.897);
+        color:#ddd;
+        font-weight:700;
+    }
+        .delete:hover{
+            color:rgba(223, 39, 39, 0.897);
+            background-color:#ddd;
+        }
+    .submit{
+        background-color: rgba(62, 219, 62, 0.897);
+        color:#ddd;
+        font-weight:700;
+    }
+        .submit:hover{
+            color:rgba(62, 219, 62, 0.897);
+            background-color: #ddd;
+        }
+
+.input{
+    border-radius:15px;
+    border:1px solid #aaa;
+}
+
+
+@media screen and (max-width:830px){
+    .container{
+        display:grid;
+        height:100%;
+        grid-template-columns: repeat(12,1fr);
+        grid-template-rows: 10% auto 10%;
+
+        grid-template-areas:
+            ". . . . . . . . . . . ."
+            ". . t t t t t t t t . ."
+            ". . . . . . . . . . . ."
+        ;
+    }
+}
+@media screen and (max-width:455px){
+    .container{
+        display:grid;
+        height:100%;
+        grid-template-columns: repeat(12,1fr);
+        grid-template-rows: 10% auto 10%;
+
+        grid-template-areas:
+            ". . . . . . . . . . . ."
+            ". t t t t t t t t t t ."
+            ". . . . . . . . . . . ."
+        ;
+    }
+}

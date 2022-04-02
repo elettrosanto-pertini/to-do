@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">-->
+    <link rel="stylesheet" href="stile.css">
+    <title>To-Do app</title>
+</head>
+<body>
+    <div class="container">
+        <div class="canvas">
+            <h3 style="text-align: center;" class="titolo">To-Do App</h3>
+            <div id="taskInputContainer">
+                <input type="text" name="task" id="taskInput" maxlength="20" class="input">
+                <button type="submit" id="submit-btn" onclick="aggiungiTask()" class="button submit" disabled>Submit</button>
+                <button type="submit" onclick="eliminaTutti()" class="button delete">Delete All</button>
+            </div>
+
+            <table>
+                <caption>Tasks</caption>
+                <thead>
+                    <tr>
+                        <th>Da Fare</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="listaTask">
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+</body>
+<script src="main.js"></script>
+</html>
